@@ -260,8 +260,8 @@ int bind_peer(int fd, int fd_from)
     CHECK_RES_RETURN(res, "getpeername", res);
 
     /* if the destination is the same machine, there's no need to do bind */
-    if (is_same_machine(&from))
-        return 0;
+    /*if (is_same_machine(&from))
+        return 0;*/
 
 #ifndef IP_BINDANY /* use IP_TRANSPARENT */
     res = setsockopt(fd, IPPROTO_IP, IP_TRANSPARENT, &trans, sizeof(trans));
